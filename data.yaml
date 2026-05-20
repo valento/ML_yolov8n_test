@@ -1,0 +1,7 @@
+path: D:/learn/Python/pytorch/dataset   # Absolute to your dataset folder
+train: train/img                        # Rel. to training images
+val: val/img                            # rel. validation images
+
+# Define classes
+names:
+  0: pallet_detail                     # The target object for robot to see

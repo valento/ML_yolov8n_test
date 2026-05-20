@@ -1,0 +1,22 @@
+# Robotic Pallet Detail Detection
+
+This a learning project with **PyTorch** and **YOLOv8/YOLOv11** to detect overlapping mechanical components on pallets using a live camera feed (I'll also have to use my phone for now)
+
+## Setup:
+- **Environment Manager:** Conda (`yolo_bot`)
+- **Core Frameworks:** PyTorch on CUDA 12.1, ultralytics for yolo for YOLO
+
+```sh
+conda create --name yolo_bot python=3.10 -y
+conda activate yolo_bot
+conda install -c nvidia cuda-toolkit=12.1 -y
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
+pip install ultralytics
+```
+
+## Pipeline
+(Batch Inference for now)
+1. I'll be **auto-Labeling:** extracting initial bounding boxes using my Scikit-image/CV2 pipeline I used before
+2. annotation tools - adjust boexes
+3. Fine-tunnig a pre-trained YOLO model on the RTX 3080.
+4. Feed coordinates to the robot's solvers

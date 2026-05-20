@@ -1,0 +1,8 @@
+#the raw data
+dataset/
+
+# local system
+.DS_Store
+Thumbs.db
+
+runs/
