@@ -1,6 +1,6 @@
 path: D:/learn/Python/pytorch/dataset   # Absolute to your dataset folder
-train: train/img                        # Rel. to training images
-val: val/img                            # rel. validation images
+train: train/images                        # Rel. to training images
+val: train/images                            # rel. validation images
 
 # Define classes
 names:

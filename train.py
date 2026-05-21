@@ -3,7 +3,7 @@ from ultralytics import YOLO
 
 def main():
   # Ultralytics models (https://platform.ultralytics.com/ultralytics/yolov8)
-  model = YOLO("yolo8n.pt") # # pretrained YOLOv8 model for robots
+  model = YOLO("yolov8n.pt") # # pretrained YOLOv8 model for robots
 
   # Batch infernece for now
   # buy USB-c addapter
@@ -21,6 +21,7 @@ def main():
     imgsz = 640,
     device = 0,         # force GPU training
     workers = 4,        # CPU threads
+    exit_ok = True      # write/overwrite runs/detect/train folder
   )
 
 if __name__ == "__main__":

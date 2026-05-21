@@ -20,3 +20,7 @@ pip install ultralytics
 2. annotation tools - adjust boexes
 3. Fine-tunnig a pre-trained YOLO model on the RTX 3080.
 4. Feed coordinates to the robot's solvers
+
+
+# Throubles:
+### <span style='color: yellow'> wrong masking!</span> :( - fix it!
