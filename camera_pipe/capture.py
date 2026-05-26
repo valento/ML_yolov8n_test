@@ -25,13 +25,15 @@ class ImageCapture:
     os.makedirs(img_dir, exist_ok=True)
     os.makedirs(lbl_dir, exist_ok=True)
 
-    cap = cv2.VideoCapture(0) # Adjust for your camera interface index: 0,1,2...
+    camera = cv2.VideoCapture(0) # Adjust for your camera interface index: 0,1,2...
     cap_counter = 0
 
     while cap_counter < num_images:
+      # warming up
       for _ in range(5):
-        cap.grab()
-      ret, frame = cap.retrieve()
+        camera.grab()
+
+      ret, frame = camera.retrieve()
       if not ret:
         break
 
@@ -103,7 +105,7 @@ class ImageCapture:
         
         print(f"Saved image/label pair: {img_name}/{lable_name}")
       
-    cap.release()
+    camera.release()
     cv2.destroyAllWindows()
 
    

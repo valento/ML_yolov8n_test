@@ -3,7 +3,8 @@ from ultralytics import YOLO
 
 def main():
   # Lad pt-file!
-  model = YOLO("stick_detector.pt")
+  # model = YOLO("stick_detector.pt")
+  model = YOLO("stick_detector.engine")
 
   # Galaxy Z Flip 7 camera stream
   cap = cv2.VideoCapture(0) # Adjust index to 1 or 2 if needed

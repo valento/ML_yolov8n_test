@@ -21,6 +21,19 @@ pip install ultralytics
 3. Fine-tunnig a pre-trained YOLO model on the RTX 3080.
 4. Feed coordinates to the robot's solvers
 
+# Testing with precompiled model for RTX-3080:
+### my_model.pt → blueprint file called ONNX (.onnx) → my_optimized_model.engine
+```sh
+# Python bindings
+pip install tensorrt tensorrt-cu12==[some-version]
+# C++ for main execution runtime
+pip install tensorrt-cu12-libs
+# Dispatecher for Orchestration and Executaion
+pip install tensorrt-dispatch-cu12
+
+# compile and export an engine
+yolo export model=stick_detector.pt format=engine device=0
+```
 
 # Throubles:
 ### <span style='color: yellow'> wrong masking!</span> :( - fix it!

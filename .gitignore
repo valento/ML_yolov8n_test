@@ -1,8 +1,8 @@
-#the raw data
+#the raw-data and model-generations
 dataset/
+raw_captures/
+runs/
 
 # local system
 .DS_Store
 Thumbs.db
-
-runs/
