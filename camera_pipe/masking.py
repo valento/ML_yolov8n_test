@@ -45,11 +45,8 @@ def interactive_masking():
     cv2.createTrackbar('Pallet Upper', 'Masking Tool', 100, 255, nothing)
     cv2.createTrackbar('Mode', 'Masking Tool', 0, 2, nothing)  # 0=both, 1=floor only, 2=pallet only
     
-    print("\n=== Interactive Masking Tool ===")
-    print("Move your sticks under the live camera feed.")
-    print("Adjust trackbars to find optimal background cleaning thresholds.")
+    print("\n=== Interactive Masking ===")
     print("Press 'q' to quit.")
-    print("Press 's' to print current parameters to terminal.")
     print("=================================")
     
     while True:

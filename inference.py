@@ -4,10 +4,10 @@ import os
 
 def main():
     # Load the PyTorch weights and model
-    model = YOLO("best.pt")
+    model = YOLO("stick_detector.pt")
 
     # Path to image for test
-    test_image_path = "dataset/train/images/stick_6.jpg" 
+    test_image_path = "dataset/train/images/stick_16.jpg" 
     
     if not os.path.exists(test_image_path):
       print(f"Could not find test image at {test_image_path}. Check your filename!")

@@ -21,8 +21,11 @@ def main():
     imgsz = 640,
     device = 0,         # force GPU training
     workers = 4,        # CPU threads
-    exit_ok = True      # write/overwrite runs/detect/train folder
+    exist_ok = True,    # write/overwrite runs/detect/train folder
+    # degrees = 180.0
   )
+
+  print("   Training Finished!")
 
 if __name__ == "__main__":
   main()
