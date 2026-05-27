@@ -4,13 +4,13 @@ import argparse
 import numpy as np
 
 class ImageCapture:
-  def __init__(self, min_gray=0, max_gray=130, min_area=15090.5, max_area=20090.5):
+  def __init__(self, min_gray=0, max_gray=130, min_area=15090.5, max_area=50090.5):
     self.min_gray = min_gray
     self.max_gray = max_gray
     self.min_area = min_area
     self.max_area = max_area
 
-  def capture(self, num_images=50):
+  def capture(self, num_images=50, start_idx=0):
     """
     Capture Images
     Args: 
@@ -26,14 +26,14 @@ class ImageCapture:
     os.makedirs(lbl_dir, exist_ok=True)
 
     camera = cv2.VideoCapture(0) # Adjust for your camera interface index: 0,1,2...
-    cap_counter = 0
+    cap_counter = start_idx
 
-    while cap_counter < num_images:
+    while cap_counter < num_images+start_idx:
       # warming up
-      for _ in range(5):
-        camera.grab()
+      for _ in range(15):
+        camera.read()
 
-      ret, frame = camera.retrieve()
+      ret, frame = camera.read()
       if not ret:
         break
 
@@ -91,12 +91,13 @@ class ImageCapture:
           continue
 
         # save frame
-        img_name = f"stick_{cap_counter}.jpg"
+        unique_name = "stick"
+        img_name = f"{unique_name}_{cap_counter}.jpg"
         img_path = os.path.join(img_dir, img_name)
         cv2.imwrite(img_path, frame)
         
         # save label
-        lable_name = f"stck_{cap_counter}.txt"
+        lable_name = f"{unique_name}_{cap_counter}.txt"
         label_path = os.path.join(lbl_dir, lable_name)
         with open(label_path, 'w') as f:
           f.writelines(current_frame_yolo_lines)
@@ -135,9 +136,15 @@ if __name__ == "__main__":
   parser.add_argument(
     "--max_area",
     type=int,
-    default=20000,
+    default=25000,
     help="Maxumum Area to capture"
+  )
+  parser.add_argument(
+    "--start_index",
+    type=int,
+    default=0,
+    help="Save name from (Default 0)"
   )
   args = parser.parse_args()
   cam = ImageCapture(min_gray=0, max_gray=args.max_gray, min_area=args.min_area, max_area=args.max_area)
-  cam.capture(num_images=args.num_images)
+  cam.capture(num_images=args.num_images, start_idx=args.start_index)

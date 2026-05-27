@@ -3,7 +3,8 @@ from ultralytics import YOLO
 
 def main():
   # Ultralytics models (https://platform.ultralytics.com/ultralytics/yolov8)
-  model = YOLO("yolov8n.pt") # # pretrained YOLOv8 model for robots
+  # model = YOLO("yolov8n.pt") # # pretrained YOLOv8 model for robots
+  model = YOLO("v1_singles_only.pt") # # pretrained with singles
 
   # Batch infernece for now
   # buy USB-c addapter
@@ -17,7 +18,7 @@ def main():
   # use a mode (train|predict|val|export|track|benchamark)
   result = model.train(
     data = "data.yaml", # Path to the dataset configuration file we made
-    epochs = 50,        # Rounds to train
+    epochs = 40,        # Rounds to train
     imgsz = 640,
     device = 0,         # force GPU training
     workers = 4,        # CPU threads
