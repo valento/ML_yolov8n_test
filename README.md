@@ -50,7 +50,7 @@ pip install tensorrt-dispatch-cu12
 yolo export model=stick_detector.pt format=engine device=0
 ```
 
-# Notes & Throubles:
+# Notes & Troubles:
 ## My notes:
 - **Environment Manager:** Conda (`yolo_bot`)
 - **Core Frameworks:** PyTorch on CUDA 12.1, ultralytics for yolo for YOLO
@@ -63,6 +63,6 @@ conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvi
 pip install ultralytics
 ```
 
-## my throubles
+## my troubles
 ### <span style='color: yellow'> wrong masking!</span> :( - fix it!
 ### NVIDIAs packages (tensorrt...) are rather large and may fail. Try again :(
