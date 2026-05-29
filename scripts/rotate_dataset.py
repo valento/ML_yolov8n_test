@@ -35,10 +35,10 @@ def fix_orientation():
         cls,cx,cy,nw,nh = map(float, parts) # carefull, this takes only floats
 
         # Transform Rotate 90 CCW
-        new_cx = cy # flip those
-        new_cy = 1.0 - cx # across the Y axis
-        new_nw = nh # jjust switch those
-        new_nh = nw # jjust switch those
+        new_cx = cy         # flip those
+        new_cy = 1.0 - cx   # across the Y axis
+        new_nw = nh         # jjust switch those
+        new_nh = nw         # switch those
 
         rotated_lines.append(f"{int(cls)} {new_cx:.6f} {new_cy:.6f} {new_nw:.6f} {new_nh:.6f}\n")
       with open(txt_path, 'w') as f:

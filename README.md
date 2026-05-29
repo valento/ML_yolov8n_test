@@ -1,6 +1,9 @@
 # Robotic Pallet Detail Detection
 
-This a learning project with **PyTorch** and **YOLOv8/YOLOv11** to detect overlapping mechanical components on pallets using a live camera feed (I'll also have to use my phone for now)
+This a learning project with **PyTorch** and **YOLOv8/TensorRT** to detect overlapping mechanical components on pallets using a live camera feed (I'll also had to use my phone for now)
+Training stages: singles → groups → overlaps
+Training with only 20-50 images in dataset for each round.
+I also Transfered leraning on each step and presompiled it for RTX3080
 
 ## Setup:
 - **Environment Manager:** Conda (`yolo_bot`)

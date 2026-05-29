@@ -28,7 +28,7 @@ def rename_labels():
             os.rename(old_path, new_path)
             rename_count += 1
 
-    print(f"✨ Successfully renamed {rename_count} label files from 'stck_' to 'stick_'!")
+    print(f"    Successfully renamed {rename_count} label files from 'stck_' to 'stick_'!")
 
 if __name__ == "__main__":
     rename_labels()

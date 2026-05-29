@@ -47,7 +47,7 @@ def interactive_masking():
     
     print("\n=== Interactive Masking ===")
     print("Press 'q' to quit.")
-    print("=================================")
+    print("= ===========")
     
     while True:
         # LIVE CAPTURE: Read current frame dynamically inside the loop
@@ -95,7 +95,7 @@ def interactive_masking():
             print("\n=== Calibration Thresholds Found! ===")
             print(f"Floor Limits:  lower={floor_lower}, upper={floor_upper}")
             print(f"Pallet Limits: lower={pallet_lower}, upper={pallet_upper}")
-            print("=======================================")
+            print("* * * * *")
             
     cap.release()
     cv2.destroyAllWindows()

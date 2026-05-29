@@ -119,14 +119,12 @@ if __name__ == "__main__":
     default=20,
     help="Number of images to capture"
   )
-
   parser.add_argument(
     "--max_gray",
     type=int,
     default=145,
     help="Maximum mask threshold"
   )
-
   parser.add_argument(
     "--min_area",
     type=int,
@@ -145,6 +143,8 @@ if __name__ == "__main__":
     default=0,
     help="Save name from (Default 0)"
   )
+
   args = parser.parse_args()
+  
   cam = ImageCapture(min_gray=0, max_gray=args.max_gray, min_area=args.min_area, max_area=args.max_area)
   cam.capture(num_images=args.num_images, start_idx=args.start_index)

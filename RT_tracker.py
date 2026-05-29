@@ -1,5 +1,7 @@
 import cv2
 from ultralytics import YOLO
+from datetime import datetime
+import os
 
 def main():
   # Lad pt-file!
@@ -54,8 +56,16 @@ def main():
     # Show the live tracking output
     cv2.imshow("Robot High-Level CV", display_frame)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    key = cv2.waitKey(1) & 0xFF
+
+    if key == ord('q'):
       break
+    elif key == ord('p'):
+      timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+      screenshot_dir = "detections_shots"
+      os.makedirs(screenshot_dir, exist_ok=True)
+      snapshot_name = os.path.join(screenshot_dir, f"snap_{timestamp}.jpg")
+      cv2.imwrite(snapshot_name, display_frame)
 
   cap.release()
   cv2.destroyAllWindows()
