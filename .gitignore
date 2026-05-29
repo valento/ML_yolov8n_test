@@ -6,3 +6,11 @@ runs/
 # local system
 .DS_Store
 Thumbs.db
+.pypilot
+.vscode/
+__pycache__/
+*.pyc
+
+*.engine
+*.pt
+*.onnx
